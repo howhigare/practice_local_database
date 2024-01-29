@@ -35,4 +35,14 @@ class HomePageController extends GetxController {
     db.delete("Notes", where: "id = ?", whereArgs: [id]);
     getNotes();
   }
+  void updateNote(int index) async {
+    var newNote = await Get.toNamed("/create", arguments: notes[index]);
+    newNote = newNote as Note?;
+
+    if (newNote != null) {
+      await db.update("Notes", newNote.toMap(),
+        where: "id = ?", whereArgs: [newNote.id]);
+      getNotes();
+    }
+  }
 }

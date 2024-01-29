@@ -35,7 +35,10 @@ class HomePageView extends GetView<HomePageController> {
                   subtitle: Text(controller.notes[index].content),
                   trailing: PopupMenuButton(
                     itemBuilder: (BuildContext context) => [
-                      const PopupMenuItem(child: Text("Edit")),
+                      PopupMenuItem(child: Text("Edit"),
+                        onTap: () => controller.updateNote(index),
+                      ),
+
                       PopupMenuItem(
                         child: Text("Delete"),
                         onTap: () =>
