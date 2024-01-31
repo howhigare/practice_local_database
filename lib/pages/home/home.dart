@@ -10,12 +10,12 @@ class HomePageView extends GetView<HomePageController> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Notes'),
-        backgroundColor: Colors.deepPurple, // Warna latar belakang App Bar
+        backgroundColor: Colors.purple, // Warna latar belakang App Bar
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: controller.createNote,
         child: const Icon(Icons.add),
-        backgroundColor: Colors.deepPurple, // Warna latar belakang FAB
+        backgroundColor: Colors.purple, // Warna latar belakang FAB
       ),
       body: SafeArea(
         child: Obx(
